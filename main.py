@@ -22,7 +22,8 @@ class ArrayFuntion (np.ndarray) :
     def __array_finalize__ (self, obj):
         if obj is None: return
         self.info = getattr(obj, 'name', "no name")
-print('\t',ArrayFuntion(11))
+W = ArrayFuntion(np.arange(10),"range_10")
+print(W.name)
 
 print('\n\tExercise 58')
 B=np.random.randint(0,10,(3,4,3,4))
